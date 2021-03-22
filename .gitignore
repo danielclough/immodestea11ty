@@ -72,3 +72,5 @@ dist
 
 tmp/*
 *.env
+# Local Netlify folder
+.netlify
