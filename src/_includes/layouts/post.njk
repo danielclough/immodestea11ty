@@ -6,16 +6,23 @@
 
 {% block content %}
     <article class="content">
+        <section class="post-full-content">
         {% if post.feature_image %}
             <figure class="post-feature-image">
                 <img src="{{ post.feature_image }}" alt="{{ title }}">
             </figure>
         {% endif %}
-        <section class="post-full-content">
-            <h1 class="content-title">{{ title }}</h1>
-            <section class="content-body load-external-scripts">
-                {{ content | safe }}
-            </section>
+            <div class="post-meta">
+                <div class="post-title">
+                    <h1 class="content-title">{{ title }}</h1>
+                </div>
+                <div class="post-excerpt">
+                    <p> {{ post.excerpt }} </p>
+                </div>
+            </div>
+        </section>
+        <section class="content-body load-external-scripts">
+            {{ content | safe }}
         </section>
     </article>
 {% endblock %}

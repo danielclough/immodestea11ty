@@ -1,38 +1,69 @@
 {% from "partials/icon.njk" import icon %}
 
-<header class="site-head"{% if site.cover_image %} style="background-image: url('{{ site.cover_image }}')"{% endif %}>
+<header class="site-head">
     <div class="container">
+        <div class="top-logo">
+            <a {% if page.url == "/" %}aria-current="page"{% endif %} href="{{ site.url }}">
+                <img class="site-logo" src="{{ site.icon }}" alt="{{ site.title }}">
+            </a>
+        </div>
         <div class="site-mast">
-            {% if site.logo %}
-                <div class="site-mast-left">
-                    <a {% if page.url == "/" %}aria-current="page"{% endif %} href="{{ site.url }}">
-                        <img class="site-logo" src="{{ site.logo }}" alt="{{ site.title }}">
-                    </a>
-                </div>
-            {% endif %}
+            <div class="mast-left-logo">
+                <a {% if page.url == "/" %}aria-current="page"{% endif %} href="{{ site.url }}">
+                    <img class="site-logo" src="{{ site.icon }}" alt="{{ site.title }}">
+                </a>
+            </div>
             <div class="site-mast-right">
-                {% if site.twitter %}
+                <nav class="site-nav">
+                        {% for item in site.navigation %}
+                            <a {% if page.url == item.url %}aria-current="page"{% endif %} class="site-nav-item" href="{{ item.url }}">
+                                {{ item.label }}
+                            </a>
+                        {% endfor %}
+                    <a class="site-nav-item" href="/">Signin</a>
+                </nav>
+                <div class="site-mast-social-right">
                     <a href="https://twitter.com/{{ site.twitter | replace("@", "") }}" class="site-nav-item" target="_blank" rel="noopener noreferrer">
                         {{ icon({ id: 'twitter' }) }}
                     </a>
-                {% endif %}
-                {% if site.facebook %}
                     <a href="https://www.facebook.com/{{ site.facebook }}" class="site-nav-item" target="_blank" rel="noopener noreferrer">
                         {{ icon({ id: 'facebook' }) }}
                     </a>
+                    <a class="site-nav-item" href="https://feedly.com/i/subscription/feed/{{ site.url }}/feed.xml" target="_blank" rel="noopener noreferrer">
+                        {{ icon({ id: 'rss' }) }}
+                    </a>
+                </div>
+                <form class="site-mast-form" style="display:none">
+                    <input type=text id="email" name="email" value="Email">
+                    <input id="mast-button" type="submit">
+                    <div class="sso-icons">
+                        <p>GoogleSSO</p><p>GithubSSO</p><p>FacebookSSO</p>
+                    </div>
+                </form>
+                {% if collections.tags %}
+                    <div class="site-nav-right">
+                        {% for tag in collections.tags %}
+                            <a {% if page.url == tag.url %}aria-current="page"{% endif %} class="site-nav-button{% if tag.featured %}  site-nav-button-featured{% endif %}" href="{{ tag.url }}">
+                                {{ tag.thumbnail if tag.thumbnail else tag.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
                 {% endif %}
-                <a class="site-nav-item" href="https://feedly.com/i/subscription/feed/{{ site.url }}/feed.xml" target="_blank" rel="noopener noreferrer">
-                    {{ icon({ id: 'rss' }) }}
-                </a>
             </div>
         </div>
         {% if page.url == '/' %}
             <div class="site-banner">
-                <h1 class="site-banner-title">{{ site.title }}</h1>
-                <p class="site-banner-desc">{{ site.description }}</p>
+                <div class="about-tea">
+                    <div class="about-tea-card">
+                        <img src="{{ site.cover_image }}" />
+                        <strong>Tea Party Every Day!</strong>
+                    </div>
+                </div>
+                <div class="drinking-tea">
+                    <img src="{{ site.logo }}" />
+                    <p class="site-banner-desc">{{ site.description }}</p>
+                </div>
             </div>
         {% endif %}
-
-        {% include 'partials/navigation.njk' %}
     </div>
 </header>
