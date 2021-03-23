@@ -45,6 +45,7 @@
     "netlify-cli": "^3.13.6"
   },
   "devDependencies": {
+    "eleventy-google-fonts": "^0.0.5",
     "eslint": "7.22.0",
     "eslint-plugin-ghost": "2.0.0"
   }

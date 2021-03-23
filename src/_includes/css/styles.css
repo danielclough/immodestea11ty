@@ -28,10 +28,9 @@ what's here to work the way you'd like it to.
   --color-bg: #f5f5f5;
 
   /* Fonts */
-  --font-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  --font-serif: 'Merriweather', Georgia, Times, serif;
+  --font-sans-serif: Charter, Bitstream Charter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", 
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-serif: Georgia, Times, serif;
   --font-mono: Menlo, Courier, monospace;
   --font-light: 100;
   --font-normal: 400;
@@ -311,7 +310,7 @@ body {
   overflow-x: hidden;
   color: #3c484e;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Charter, Bitstream Charter, serif;", "Helvetica Neue", sans-serif;
   font-size: 1.5rem;
   line-height: 1.6em;
   font-weight: 400;
@@ -709,7 +708,7 @@ h6 {
   padding: 3px 4px;
   color: #ccc;
   opacity: 0.7;
-  font-family: 'Merriweather';
+  font-family: 'Georgia', serif;
   font-size: .9em;
 }
 
@@ -774,14 +773,13 @@ h6 {
   width: 100%;
   margin: 0 auto;
   padding: 1%;
-}
-.about-tea-card {
   text-align: left;
   font-size: 1.5em;
   line-height: 2em;
   background-image: {{ site.cover_image }};
 }
-.about-tea-card img {
+
+.about-tea img {
   width: 100%;
 }
 
@@ -802,7 +800,7 @@ h6 {
   color: #ccc;
   font-size: 4rem;
   line-height: 1.3em;
-  font-family: 'Merriweather';
+  font-family: 'Georgia', serif;
 }
 
 .site-banner-desc {
@@ -812,7 +810,7 @@ h6 {
   line-height: 3rem;
   opacity: 0.7;
   color: white;
-  font-family: 'Open Sans';
+  font-family: 'Charter, Bitstream Charter, serif;';
 }
 @media (min-width: 700px) {
   .site-banner-desc {
@@ -865,29 +863,21 @@ h6 {
   text-decoration: none;
 }
 
-@media (min-width: 700px) {
-}
-@media (min-width: 1080px) {
-}
-@media (min-width: 1400px) {
-}
-@media (min-width: 2100px) {
-}
 @media (min-width: 700px){
   .site-nav-item {
     font-size: 1.5em;
-  }
-}
-@media (min-width: 1080px){
-  .about-tea-card {
-    font-size: 2.3em;
-    line-height: 2.6em;
   }
   .mast-left-logo {
     display: block;
   }
   .top-logo {
     display: none;
+  }
+}
+@media (min-width: 1080px){
+  .about-tea-card {
+    font-size: 2.3em;
+    line-height: 2.6em;
   }
   .site-nav-item {
     font-size: 2em;
