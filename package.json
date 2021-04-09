@@ -42,7 +42,7 @@
     "eleventy-plugin-local-images": "^0.4.0",
     "eslint-utils": "2.1.0",
     "html-minifier": "^4.0.0",
-    "netlify-cli": "^3.13.6"
+    "netlify-cli": "^3.13.10"
   },
   "devDependencies": {
     "eleventy-google-fonts": "^0.0.5",

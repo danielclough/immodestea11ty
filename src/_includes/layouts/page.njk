@@ -1,0 +1,56 @@
+{% extends 'layouts/default.njk' %}
+
+{% set title = page.title %}
+{% set codeinjection_head = page.codeinjection_head %}
+{% set codeinjection_foot = page.codeinjection_foot %}
+
+{% block content %}
+    <article class="content">
+        <section class="page-full-content">
+        {% if page.feature_image %}
+            <figure class="page-feature-image">
+                <img src="{{ page.feature_image }}" alt="{{ title }}">
+            </figure>
+        {% endif %}
+            <div class="page-meta">
+                <div class="page-title">
+                    <h1 class="content-title">{{ title }}</h1>
+                </div>
+                <div class="page-excerpt">
+                    <p> {{ page.excerpt }} </p>
+                </div>
+            </div>
+        </section>
+        <section class="content-body load-external-scripts">
+            {{ content | safe }}
+        </section>
+    </article>
+{% endblock %}
+
+{%- block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:site" content="{{ site.twitter }}">
+    <meta name="twitter:creator" content="{{ page.primary_author.twitter }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url + page.url }}">
+    <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+    <meta name="twitter:description" content="{{ page.excerpt }}">
+    <meta name="twitter:image" content="{{ page.feature_image }}">
+
+    <!--Schema-->
+    <link rel="author" href="{{ page.primary_author.website }}">
+    <link rel="publisher" href="{{ site.url }}">
+    <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+    <meta itemprop="description" content="{{ page.excerpt }}">
+    <meta itemprop="image" content="{{ page.feature_image }}">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:url" content="{{ site.url + page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }} – {{ site.title }}">
+    <meta property="og:image" content="{{ page.feature_image }}">
+    <meta property="og:description" content="{{ page.excerpt }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.lang }}">
+    <meta property="article:author" content="{{ site.url }}">
+{%- endblock -%}

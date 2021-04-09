@@ -1,0 +1,11 @@
+---
+pagination:
+  data: collections.pages
+  size: 1
+  alias: page
+  addAllPagesToCollections: true
+layout: 'layouts/page.njk'
+permalink: '{{ page.url }}'
+---
+
+{{ page.html | safe if page.html else "Page content not found" }}

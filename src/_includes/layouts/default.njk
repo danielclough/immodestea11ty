@@ -47,7 +47,10 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         
-        {% set css %}{% include "css/styles.css" %}{% endset %}
+        {% set css %}
+        {% include "css/styles.css" %}
+        {% include "css/audio.css" %}
+        {% endset %}
         <style>{{ css | cssmin | safe }}</style>
 
         <script>document.documentElement.classList.remove('no-js');</script>
@@ -78,4 +81,5 @@
             {{ codeinjection_foot | safe if codeinjection_foot }}
         </div>
     </body>
+    {% include "partials/audio.njk" %}
 </html>
