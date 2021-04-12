@@ -3,15 +3,10 @@
 
 <header class="site-head">
     <div class="container">
-        <div class="top-logo">
-            <a {% if page.url == "/" %}aria-current="page"{% endif %} href="/">
-                <img class="site-logo" src="{{ site.icon }}" alt="{{ site.title }}">
-            </a>
-        </div>
         <div class="site-mast">
-            <div class="mast-left-logo">
+            <div class="mast-logo">
                 <a {% if page.url == "/" %}aria-current="page"{% endif %} href="/">
-                    <img class="site-logo" src="{{ site.icon }}" alt="{{ site.title }}">
+                    <img class="site-logo" src="/svg/logo-white.svg" width="2460px" height="1853px" rel="shortcut icon preload" alt="{{ site.title }}">
                 </a>
             </div>
             <div class="site-mast-right">
@@ -43,12 +38,12 @@
                     </div>
                 {% endif %}
                 <div class="nav-teas">
-                    <div class="nav-green"><img src="/svg/green-tea.svg" alt="Green Tea" /></div>
-                    <div class="nav-white"><img src="/svg/white-tea.svg" alt="White Tea" /></div>
-                    <div class="nav-light-wulong"><img src="/svg/light-wulong.svg" alt="Light Wulong" /></div>
-                    <div class="nav-dark-wulong"><img src="/svg/dark-wulong.svg" alt="Dark Wulong" /></div>
-                    <div class="nav-red"><img src="/svg/red-tea.svg" alt="Red Tea" /></div>
-                    <div class="nav-dark"><img src="/svg/dark-tea.svg" alt="Dark Tea" /></div>
+                    <div class="nav-green"><img  width="720px" height="723px" src="/svg/green-tea.svg" alt="Green Tea" /></div>
+                    <div class="nav-white"><img width="720px" height="723px" src="/svg/white-tea.svg" alt="White Tea" /></div>
+                    <div class="nav-light-wulong"><img width="720px" height="723px" src="/svg/light-wulong.svg" alt="Light Wulong" /></div>
+                    <div class="nav-dark-wulong"><img width="720px" height="723px" src="/svg/dark-wulong.svg" alt="Dark Wulong" /></div>
+                    <div class="nav-red"><img width="720px" height="723px" src="/svg/red-tea.svg" alt="Red Tea" /></div>
+                    <div class="nav-dark"><img width="720px" height="723px" src="/svg/dark-tea.svg" alt="Dark Tea" /></div>
                 </div>
             </div>
         </div>
@@ -68,7 +63,7 @@
                 </div>
                 <div class="drinking-tea">
                     <a href="/tag/events">
-                        <img src="{{ site.logo }}" />
+                        <img width="1500px" height="1000px"  src="/images/300/lovestea_300.jpg" srcset="images/300/lovestea_300.jpg 300w, images/500/lovestea_500.jpg 500w, images/700/lovestea_700.jpg 700w, images/1200/lovestea_1200.jpg 1200w" alt="Picture of two people enjoying tea." />
                         <p class="site-banner-desc">{{ site.description }}</p>
                     </a>
                 </div>

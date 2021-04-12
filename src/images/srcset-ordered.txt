@@ -1,0 +1,8 @@
+srcset="images/300/lovestea_300.jpg 300w, images/500/lovestea_500.jpg 500w, images/700/lovestea_700.jpg 700w, images/1200/lovestea_1200.jpg 1200w"
+
+srcset="images/300/gallery_300.jpg 300w, images/500/gallery_500.jpg 500w, images/700/gallery_700.jpg 700w, images/1200/gallery_1200.jpg 1200w"
+
+srcset="images/300/luyu_300.jpg 300w, images/500/luyu_500.jpg 500w, images/700/luyu_700.jpg 700w, images/1200/luyu_1200.jpg 1200w"
+
+srcset="images/300/top_300.jpg 300w, images/500/top_500.jpg 500w, images/700/top_700.jpg 700w, images/1200/top_1200.jpg 1200w"
+
